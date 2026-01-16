@@ -7,10 +7,37 @@
     android:layout_height="match_parent"
     tools:context=".MainActivity">
 
+    <EditText
+        android:id="@+id/enter_city"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text=""
+        android:textSize="20dp"
+        tools:layout_editor_absoluteX="181dp"
+        tools:layout_editor_absoluteY="3dp">
+
+
+    </EditText>
+
+    <Button
+        android:id="@+id/add_city"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Add City"
+        tools:layout_editor_absoluteX="68dp"
+        tools:layout_editor_absoluteY="42dp">
+
+    </Button>
+
     <ListView
         android:id="@+id/city_list"
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="match_parent"
+        android:layout_marginTop="100dp"
+        tools:layout_editor_absoluteX="131dp"
+        tools:layout_editor_absoluteY="0dp">
+
     </ListView>
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>

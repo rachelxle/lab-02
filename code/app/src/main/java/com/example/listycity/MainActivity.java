@@ -1,8 +1,12 @@
 package com.example.listycity;
 
 import android.os.Bundle;
+import android.view.View;
 import android.widget.ArrayAdapter;
+import android.widget.Button;
+import android.widget.EditText;
 import android.widget.ListView;
+import android.widget.TextView;
 
 import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
@@ -17,6 +21,9 @@ public class MainActivity extends AppCompatActivity {
     ListView cityList;
     ArrayAdapter<String> cityAdapter;
     ArrayList<String> dataList;
+
+    EditText editText;
+    Button addCity;
 
 
     @Override
@@ -39,5 +46,23 @@ public class MainActivity extends AppCompatActivity {
 
         cityAdapter = new ArrayAdapter<>(this, R.layout.content, dataList);
         cityList.setAdapter(cityAdapter);
+
+
+        editText = (EditText) findViewById(R.id.enter_city);
+        addCity = (Button) findViewById(R.id.add_city);
+        addCity.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                // add city
+                String city = editText.getText().toString();
+                dataList.add(city);
+                cityAdapter.notifyDataSetChanged();
+
+            }
+        });
+
     }
+
+
 }
