@@ -24,6 +24,7 @@ public class MainActivity extends AppCompatActivity {
 
     EditText editText;
     Button addCity;
+    Button deleteCity;
 
 
     @Override
@@ -49,6 +50,7 @@ public class MainActivity extends AppCompatActivity {
 
 
         editText = (EditText) findViewById(R.id.enter_city);
+
         addCity = (Button) findViewById(R.id.add_city);
         addCity.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -59,6 +61,17 @@ public class MainActivity extends AppCompatActivity {
                 dataList.add(city);
                 cityAdapter.notifyDataSetChanged();
 
+            }
+        });
+
+        deleteCity = (Button) findViewById(R.id.delete_city);
+        deleteCity.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                // delete city
+                String city = editText.getText().toString();
+                dataList.remove(city);
+                cityAdapter.notifyDataSetChanged();
             }
         });
 
